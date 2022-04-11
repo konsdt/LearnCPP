@@ -10,4 +10,12 @@ project('HelloWorld', 'cpp',
 exe = executable('helloworld', 'helloworld.cpp',
   install : true)
 
+exe1 = executable('c1p5', 'c1p5.cpp',
+  install : true)
+
+exe2 = executable('c1p6', 'c1p6.cpp',
+  install : true)
+
+test('basic', exe2)
+test('basic', exe1)
 test('basic', exe)

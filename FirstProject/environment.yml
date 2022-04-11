@@ -1,0 +1,7 @@
+name: meson-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - meson=0.59.0
+  - python=3.9.10
