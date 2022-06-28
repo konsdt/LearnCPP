@@ -1,7 +1,7 @@
 //include in and output header
 #include <iostream>
 
-// as a side note: one should abstain from defining variable globally(accesible 
+// as a side note: one should abstain from defining variable globally(accessible 
 // to all functions)
 // rather move to define them inside the respective function from now on
 
@@ -47,7 +47,23 @@ int main() {
         + 5 + 6
         * 7 * 8;
     // generally align simliar things like equal signs or comment slashes
-       
+    
+    //1.9
+    // literal is a fixed value that is inserted directly in the source code
+    // can not be changed, examples: ('Hello world!' is the literal)
+    int z{ 5 };
+    std::cout << "Hello world!";
+    
+    // Operators perform operations on operands (e.g. mathematival +,-,etc.)
+    // Number of operands an operator uses as input is called an operators arity
+    // 3 different arities:
+    // 1. Unary: One Operand:
+    // - operator: -5 negates operand 5
+    // 2. Binary:Two operands:
+    // - operator: 3 + 5 adds left and right operands
+    // 3. Ternary: only one exists and will be covered later
+    
+    
 	return 0;
 	
 }

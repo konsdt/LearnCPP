@@ -16,6 +16,16 @@ exe1 = executable('c1p5', 'c1p5.cpp',
 exe2 = executable('c1p6', 'c1p6.cpp',
   install : true)
 
+exe3 = executable('c1p10', 'c1p10.cpp',
+  install : true)
+
+exe4 = executable('c1p11', 'c1p11.cpp',
+  install : true)
+
+exe5 = executable('c1pquiz', 'c1pquiz.cpp',
+  install : true)
+
+
 test('basic', exe2)
 test('basic', exe1)
 test('basic', exe)
