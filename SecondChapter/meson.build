@@ -9,5 +9,11 @@ exe = executable('c2p1', 'c2p1.cpp',
 exe1 = executable('c2p2', 'c2p2.cpp',
   install : true)
 
+exe2 = executable('c2p3', 'c2p3.cpp',
+install : true)
 
+exe3 = executable('c2p4', 'c2p4.cpp',
+install : true)
+
+ 
 test('basic', exe)
