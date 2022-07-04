@@ -15,5 +15,12 @@ install : true)
 exe3 = executable('c2p4', 'c2p4.cpp',
 install : true)
 
- 
+exe4 = executable('c2p5', 'c2p5.cpp',
+install : true)
+
+exe5 = executable('c2p7', 'c2p7.cpp',
+install : true)
+
+
+
 test('basic', exe)

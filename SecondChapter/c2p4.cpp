@@ -28,6 +28,12 @@ int add(int x, int y) {
     return x + y;
 }
 
+int doubleNumber(int num) 
+{
+    return 2 * num;
+}
+
+
 int main() {
     int z{ getValueFromUser() };
     printValue(add(23, 19));
