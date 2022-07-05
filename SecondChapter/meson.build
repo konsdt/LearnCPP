@@ -21,6 +21,11 @@ install : true)
 exe5 = executable('c2p7', 'c2p7.cpp',
 install : true)
 
+subdir('src')
+exe6 = executable('c2p8', sources,
+install : true)
+
+
 
 
 test('basic', exe)
