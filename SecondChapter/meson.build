@@ -25,6 +25,10 @@ subdir('src')
 exe6 = executable('c2p8', sources,
 install : true)
 
+subdir('src2p10')
+exe6 = executable('c2p10', sources10,
+install : true)
+
 
 
 
