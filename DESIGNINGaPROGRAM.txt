@@ -1,0 +1,82 @@
+DESIGN
+
+1. Define your goal:
+    State the goal in a sentence or two.
+    e.g.:
+        * Allow the user to organize a list of names and associated phone numbers.
+        * Generate a list of stock recommendations that have high dividends.
+        * Model how long it takes for a ball dropped off a tower.
+
+2. Define requirements:
+    Think about the contraints (budget, timeline, space, memory, etc..) and the 
+    capabilities that the program must exhibit in order the meet the user's needs.
+    Requirements should focus on "what" not "how"
+    e.g.:
+        * Phone numbers should be saved, so they can be recalled later.
+        * The user should enter the height of the tower.
+        * We need a testable version in 7 days.
+        * The program should crash in less than 0.1% of user sessions.
+
+3. Define tools, targets and backup plan:
+    For experienced programmers this includes:
+        * target architecture or OS the program should run on
+        * determining set of tools
+        * wether its a collaboration with others or not
+        * defining testing/feedback/release strategy
+        * how will the code be backuped
+    For now it is very simple, the program will be written just for myself
+    and only I will use it.
+
+4. Break hard problems down into easy problems:
+    Make use of the top down method for problem solving:
+    e.g.:
+    - Clean the house:
+        * Vacuum the carpets
+        * Clean the bathrooms
+            > scrub the toilet
+            > wash the sink
+        * Clean the kitchen
+            > clear the countertops
+            > clean the countertops
+            > scrub the sink
+            > take out the trash
+    This approach is incredibly usefull for programming
+
+5. Figure out sequence of events:
+    - Calculator:
+        * Get first number from user
+        * Get operator from user
+        * Get second number from user
+        * Calculate result
+        * Print result
+            
+IMPLEMENTATION:
+
+1. Outlining the main function:
+    e.g.
+    int main()
+    {
+        //get feist number from user
+    //  getUserInput();
+
+        //Get mathematical operator from user
+    //  getMathematicalOperation();
+
+        //Get second number from user
+    //  getUserInput();
+
+        //Calculate result
+    //  getUserInput();
+
+        //Print result
+    //  printResult();
+
+        return 0;
+    }
+
+2. Implement each function:
+    a) define function prototype (input and outputs)
+    b) write the function
+    c) test the function
+
+3. Final Testing

@@ -29,6 +29,17 @@ subdir('src2p10')
 exe6 = executable('c2p10', sources10,
 install : true)
 
+incdir = include_directories('headerc2p11')
+subdir('src2p11')
+exe6 = executable('c2p11', sources11, include_directories : incdir,
+install : true)
+
+
+incdirq = include_directories('headerquiz')
+subdir('srcquiz')
+exe6 = executable('quiz', sourcesquiz, include_directories : incdirq,
+install : true)
+
 
 
 
