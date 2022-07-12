@@ -23,7 +23,7 @@
     * 2.11-2.xx
   - 08.07.2022
     * 3.1-3.5
-    * meson does not contain a debugger I believe therefore I skipped the rest of this chapter
+    * Meson does not contain a debugger, i believe, therefore I skipped the rest of this chapter
     * I should familiarize myself with VSC at some point and set up a development environment on windows
   - 11.07.2022
     * 4.1-4.6
