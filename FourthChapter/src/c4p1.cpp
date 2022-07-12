@@ -119,8 +119,64 @@
 // In practice the real limit comes more often from the available RAM
 //
 //
+// 4.7 Scientific notation - duh
+// 12000 = 1.2000 * 10^4 = 1.2000e4
+// 0.000401 = 4.01 * 10^-4 = 4.01e-4
+//
+//
+// 4.8 Floating point numbers
+// there are three different floating point data types: float, doubel, long double
+// Best practice: Always make sure the type of your literals match the type of
+// the variables they're being assigned to or used to initialize. Otherwise an
+// unnecessary conversion will result, possibly with a loss of precision.
+// The precision of a floating point number defines how many significant digits
+// it can represent without information loss.
+// std::cout will print floats with a standard precision of 6
+// output manipulators can be used to alter how outputted data is printed
+#include <iomanip> // header for output manipulators
+// Best practice: Favor double over float because the lack of a floats precision
+// will often lead to inaccuracies.
+// Rounding errors occur all the time even with simple numbers like 0.1
+// They are the rule not the exception, thus never assume your floating point
+// numbers are correct
+// mathematical operations increase rounding errors!
+// There are two special categories of floating point numbers, these are only
+// available if the format IEEE 754 is used for floating point numbers
+// -> best practice: avoid division by zero!
+//
+
+
+
+
 int main() 
 {
+    //shoow nan's and inf's
+    double zero{ 0.0 };
+    double posinf { 5.0 / zero };
+    std::cout << posinf << "\n";
+
+    double neginf { -5.0 / zero };
+    std::cout << neginf << "\n";
+
+    double nan {zero / zero };
+    std::cout << nan << "\n";
+
+    // default precision of std:cout
+    std::cout << "Default precision of std::cout";
+    std::cout << 9.87654321 << "\n";
+    std::cout << 987.654321 << "\n";
+    std::cout << 987654.321 << "\n";
+    std::cout << 9876543.21 << "\n";
+    std::cout << 0.0000987654321 << "\n";
+
+    // use output manipulators 
+    std::cout << std::setprecision(16);
+    // f suffix means float
+    std::cout << 3.33333333333333333333333333333333333333333f << "\n"; 
+    // no suffix means double
+    std::cout << 3.33333333333333333333333333333333333333333 << "\n";
+
+
     //wrap around examples: short has 2 byte -> largest possible number: 65535
     unsigned short x{ 65535 };
     std::cout << "x was: " << x << "\n";

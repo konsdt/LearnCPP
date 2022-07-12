@@ -27,3 +27,5 @@
     * I should familiarize myself with VSC at some point and set up a development environment on windows
   - 11.07.2022
     * 4.1-4.6
+  - 12.07.2022
+    * 4.7-4.10
