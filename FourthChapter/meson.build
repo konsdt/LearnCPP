@@ -20,6 +20,10 @@ exe = executable('c4p11', sources4,
 exe = executable('c4p12', sources5,
   install : true)
 
+exe = executable('c4p13', sources6,
+  install : true)
+
+
 
 
 
