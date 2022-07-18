@@ -4,4 +4,6 @@ sources3 = files('c4p10.cpp')
 sources4 = files('c4p11.cpp')
 sources5 = files('c4p12.cpp')
 sources6 = files('c4p13.cpp')
+sources7 = files('c4p14.cpp')
+sources8 = files('c4q3.cpp')
 
