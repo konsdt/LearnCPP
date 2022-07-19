@@ -29,6 +29,9 @@ exe = executable('c4p14', sources7,
 exe = executable('c4q3', sources8,
   install : true, override_options: ['cpp_std=c++20'])
 
+exe = executable('c4q4', sources9,
+  install : true, override_options: ['cpp_std=c++20'])
+
 
 
 
