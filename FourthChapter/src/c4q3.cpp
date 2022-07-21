@@ -30,7 +30,7 @@ double calculate(const double number1, const double number2, const char moperato
     else if (moperator == '/')
         return number1 / number2;
     else
-        return "Not an operator";
+        return false;
 }
 
 
@@ -41,7 +41,7 @@ int main()
     const char moperator{getOperator()};
     const double result{calculate(number1, number2, moperator)};
 
-    if (result == "Not an operator")
+    if (result)
         std::cout << " \n";
     else
         std::cout << result;

@@ -13,20 +13,30 @@ double getTowerHeight()
 double fallenHeight(int seconds)
 {
     constexpr double gravityConstant {9.81};
-    double fallenDistance;
-    fallenHeight = (gravityConstant * seconds * seconds) / 2;
-    return fallenHeight;
+    double fallenDistance{};
+    fallenDistance = (gravityConstant * seconds * seconds) / 2.0;
+    return fallenDistance;
 }
 
-void printCurrentHeight(double towerHeight)
+void printCurrentHeight(double towerHeight, int seconds)
 {   
+    const double fallenDistance{ fallenHeight(seconds)};
     
-    std::cout << "At 0 seconds, the ball is at height" << towerHeight << '\n';
-}
+    if (fallenDistance < towerHeight)
+        std::cout << "At " << seconds << " seconds, the ball is at height "
+            << towerHeight - fallenDistance << "m. \n";    
+    else
+        std::cout << "The ball has reached the ground."; 
+}    
 int main()
 {
-    double towerHeight{ getTowerHeight };
-    printCurrentHeight( towerHeight );
+    const double towerHeight{ getTowerHeight() };
+    printCurrentHeight( towerHeight, 0 );
+    printCurrentHeight( towerHeight, 1 );
+    printCurrentHeight( towerHeight, 2 );
+    printCurrentHeight( towerHeight, 3 );
+    printCurrentHeight( towerHeight, 4 );
+    printCurrentHeight( towerHeight, 5 );
     return 0;
 
 }
