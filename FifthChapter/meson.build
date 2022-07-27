@@ -8,4 +8,7 @@ subdir('src')
 exe = executable('c5p1', sources,
   install : true)
 
+exe = executable('c5p5', sources1,
+  install : true)
+
 test('basic', exe)
