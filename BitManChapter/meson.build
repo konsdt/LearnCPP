@@ -12,4 +12,10 @@ exe = executable('O1', sources,
 exe = executable('O2', sources1,
   install : true)
 
+exe = executable('O3', sources2,
+  install : true)
+
+exe = executable('O4', sources3,
+  install : true)
+
 test('basic', exe)
