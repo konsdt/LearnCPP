@@ -37,9 +37,40 @@
 // namespaces can be nested
 // if the header uses a namespace, the linking source file needs to use the same
 // namespace
+// 6.3 Local variables
+// Local variables have block scope -> they are in scope from point of definition
+// until the end of the block
+// All variable names in a scope must be unique
+// passed values enter the function scope -> defining a variable inside the function
+// that has the same name as a variable that is passed to it leads to a naming collision
+// "Storage duration":
+// Governs when and how a variable will be created and destroyed ->in most cases lifetime
+// Local variables have automatic storage duration, which means they are created at
+// their point of definition and destroyed at the end of the block they are defined
+// in, this is why they are sometimes called "automatic variables"
+// local variables have no linkage: there are no other declarations of that variable
+// that refers to the same object
+// /Best Practice/:
+// Variables should be defined in the most limited space
+// Do not create a nested block for the singel purpose to force variables going
+// out of scope earlier, if considering this in almost all cases it would be better
+// to define the nested block inside an own function
+// /
+//
+//
 //
 namespace foo // define a namespace that is called foo
 {
+
+
+    int getInteger()
+    {
+        int x { };
+        std::cin >> x;
+        return x;
+    }
+
+
     //define function doSomething that belongs to namespace foo
     int doSomething(int x, int y)
     {
@@ -57,6 +88,8 @@ namespace foo::blah
 }
 
 
+
+
 namespace goo // define a namespace that is called goo
 {
     //define function doSomething that belongs to namespace goo
@@ -68,6 +101,31 @@ namespace goo // define a namespace that is called goo
 
 int main() 
 {
+
+     // quiz time
+    std::cout << "Enter an integer: ";
+    int smaller { foo::getInteger() };
+    std::cout << "Enter a larger integer: ";
+    int larger { foo::getInteger() };
+    
+    if (smaller > larger)
+    {
+        std::cout << "Swapping variables.." << '\n';
+        int temporary { smaller };
+        smaller = larger;
+        larger = temporary;
+    } //temporary dies here and is not accessible anymore
+    
+    std::cout << "The smaller value is " << smaller << '\n';
+    std::cout << "The larger value is " << larger << '\n';
+
+    int x { 2 }; //local variable
+    {
+        int x { 3 }; // x refers to different object in a different scope/block
+    } //goes out of scope here
+
+
+
     std::cout << foo::doSomething(4, 3) << '\n';     
     std::cout << goo::doSomething(4, 3) << '\n';     
  
