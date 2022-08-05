@@ -15,4 +15,10 @@ exe = executable('c6p4', sources2, include_directories : headers,
 exe = executable('c6p10', sources3, include_directories : headers,
   install : true)
 
+exe = executable('c6q2', sources4, include_directories : headers,
+  install : true)
+
+exe = executable('c6q3', sources5,
+  install : true)
+
 test('basic', exe)

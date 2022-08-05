@@ -97,7 +97,22 @@
 // time for some reason (e.g. performance).
 // "consteval auto compileTime": is a neat helper function that allows to still
 // have run-tim evaluation if we really cannot have compile time evaluation.
-
+//
+// 6.15 Unnamed and inline namespaces
+// "unnamed namespaces" are also called anonymous namespaces.
+// Everything inside it is automatically part of the parent namespace e.g. global
+// namespace
+// But an anonymous namespace has another property: it makes everything inside
+// static. That means it gives everything inside internal linkage, which means
+// it cant be seen outside of the file in which the unnamed namespace is defined.
+// they are used, when a lot of content is supposed to stay local in a given
+// file. This makes it easier then individually declaring everything with
+// the "static" keyword, its also the only option to do it for user-defined types
+// "inline namespace" are also part of the parent namespace but do not 
+// provide internal linkage, they are usually used for versioning purposes.
+// e.g. you want to change an existing function a little without breaking the 
+// code everywhere -> use inline namespace for the old version and new namespace
+// for the new version.
 int generateID()
 {
     static int s_itemID{ 0 };
@@ -113,7 +128,14 @@ int generateID()
 // never needs to be reset.
 
 
+namespace 
+{
+    void cppVersion()
+    {
+        std::cout << "We are compiling C++20" << '\n';
+    }
 
+}
 
 void incrementAndPrint()
 {
@@ -134,6 +156,7 @@ void staticIncrementAndPrint()
 int main()
 {
     using std::cout;
+    cppVersion();
     cout << "Hello world!" << '\n';
     incrementAndPrint();
     incrementAndPrint();

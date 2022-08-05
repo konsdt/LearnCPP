@@ -8,5 +8,6 @@ namespace constants
     //this is the prefered way with c++ => 17, because it saves lots of memory
     inline constexpr double myGravity { 9.18 };
     // ..etc.
+    inline constexpr int max_class_size { 35 };
 }
 #endif
