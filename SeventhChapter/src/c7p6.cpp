@@ -27,6 +27,41 @@
 // while (condition);
 //
 // /Best Practice/: Favor while loops over do-while when given an equal choice.
+//
+// 7.9 For statements
+// For loop is preferred if there is an obvious loop variable
+// Syntax:
+//
+// for (init-statement; condition; end-expression)
+//  statement
+// e.g. of a function that can calculate integer exponents
+int pow(int base, int exponent)
+{
+    int total{ 1 };
+
+    for (int count{ 0 }; count < exponent; ++count)
+        total *= base;
+
+    return total;
+}
+// it is possible to omit init-statement and end-statement, this is e.g. done when
+// there already is a variable that we want to loop over
+// for loops can be used with multiple counter by usage of the comma operator
+// /Best Practice/: Defining multiple variables and using the comma seperator is
+// acceptable inside a for statement.
+// For loops can also be nested
+// /Best Practice/: Prefer for loops over while loops when there is an obvious loop
+// variable.
+// Prefer while loops over for loops when there is no obvious loop variable.
+//
+int sumTo(int value)
+{
+    int sum{0};
+    for (int iii{1}; iii <= value; ++iii)
+        sum += iii;
+    return sum;
+}
+
 
 int main()
 {
@@ -98,5 +133,31 @@ tryAgain: // this is a statement label
         std::cout << '\n';
         ++outtercount2;
     }
+  
+    // FOR LOOP
+    for (int count{ 1 }; count <= 10; ++count)
+        std::cout << count << ' ';
+    
+    // for loop with multiple counter
+    for (int x { 0 }, y { 9 }; x < 10; ++x, --y)
+        std::cout << x << ' ' << y << '\n';
+
+    for (char c{'a'}; c <= 'e'; ++c)
+    {
+        std::cout <<c;
+
+        for (int i{0}; i < 3; ++i)
+            std::cout << i;
+        std::cout << '\n';
+    }
+    // For loop quiz time
+    for (int number{ 0 }; number <= 20; ++number)
+        std::cout << number << '\n';
+    int value{};
+    std::cout  << "Enter any integer: ";
+    std::cin >> value;
+    std::cout << sumTo(value);
+
+
     return 0;
 }
