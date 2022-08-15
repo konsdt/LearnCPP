@@ -11,6 +11,16 @@ exe = executable('c7p6', sources1,
 
 exe = executable('c7p10', sources2,
   install : true)
+
 exe = executable('c7p17', sources3,
   install : true)
+
+headers = include_directories('headers')
+
+exe = executable('c7px', sources4, include_directories: headers,
+  install : true)
+
+exe = executable('c7px3', sources5,
+  install : true)
+
 test('basic', exe)

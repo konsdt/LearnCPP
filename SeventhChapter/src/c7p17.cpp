@@ -61,6 +61,15 @@
 // The best way to do it is to create a global random number generator inside
 // a namespace and therefore also a global seed.
 // This is an exception of the rule to avoid non-const global variables.#
+// "Underseeding issues":
+// e.g.: Mersenne twister algortihm has a "state" with size of 624 bytes, if it
+// is seeded with a 4 byte object (32-bit integer) its massively underseeded
+// option: use std::seed_seq with several random devices as initializers
+// or just google if I will ever need it xD
+//
+//
+
+
 
 namespace Random // captial R to avid conflicts with functions named random()
 {
