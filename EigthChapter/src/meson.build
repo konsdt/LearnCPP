@@ -1,4 +1,6 @@
 sources = files('c8p1.cpp')
 sources1 = files('c8p6.cpp')
 sources2 = files('c8p9.cpp')
-
+sources3 = files('c8p13.cpp')
+sources4 = files('main.cpp', 'foo.cpp')
+sources5 = files('c8p15.cpp')
