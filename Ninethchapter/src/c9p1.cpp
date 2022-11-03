@@ -82,7 +82,23 @@
 // This can lead to undefined behavior
 // references are not objects, they are not required to exist ofr occupy storage.
 //
-// 
+// 9.4 Lvalue references to const
+// In order to make this work one has to use the keyword "const" when defining
+// the lvalue reference e.g.
+// const int x{5};
+// const int& ref{x};
+//
+// const lvalue references can also be initialized with a modifiable lvalue
+// the reference cant be modified while the referenced value can still be modified
+// "Best practice": Favor lvalue references to const over lvalue refrences to
+// non-const unless you need to modify the object being references.
+//
+// lvalue references to const can also be initialized with r values
+// "key insight":
+// lvalue references can only bind to modifiable lvalues.
+// lvalue references to const can bint to modifiable lvalues, non-modifiable lvalues,
+// and rvalues which makes them a much more flexible type of reference
+//
 //
 
 int main() {
@@ -96,6 +112,15 @@ int main() {
     ref = 6;
 
     std::cout << x << ref << '\n'; //print 66
+
+    int y { 5 };
+    const int& r { y };
+
+    std::cout << y << r << '\n';
+
+    y = 6;
+
+    std::cout << y << r << '\n';
 
 
     return 0;
