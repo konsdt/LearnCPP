@@ -12,6 +12,12 @@ exe = executable('c9p5', sources1,
   install : true)
 exe = executable('c9p6', sources2,
   install : true)
+exe = executable('c9p9', sources3,
+  install : true)
+exe = executable('c9p10', sources4,
+  install : true)
+
+
 
 
 
