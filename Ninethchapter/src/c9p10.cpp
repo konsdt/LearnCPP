@@ -10,12 +10,14 @@
 //
 // 
 
+// version of greet with optional nullptr argument
 void greet(std::string* name=nullptr)
 {
     std::cout << "Hello ";
     std::cout << (name ? *name : "guest") << '\n';
 }
 
+// overloading as alternative to optional nullptr object
 void greet2(std::string_view name)
 {
     std::cout << "Hello " << name << '\n';
