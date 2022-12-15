@@ -70,7 +70,7 @@ int main()
     std::cout << isSmall(int) << " int \n";
     std::cout << isSmall(double) << " double \n";
     std::cout << isSmall(S) << " struct \n";
-
+    std::cout << isSmall(S) << " test VSC \n";
 
     return 0;
 }
