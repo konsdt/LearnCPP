@@ -1,1 +1,1 @@
-sources = files("c10p1.cpp")
+sources = files('c10p1.cpp')
