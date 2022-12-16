@@ -1,1 +1,3 @@
 sources = files('c10p1.cpp')
+sources1 = files('c10p3.cpp')
+sources2 = files('c10p4.cpp')
