@@ -9,6 +9,12 @@ exe = executable('c10p3', sources1,
   install : true)
 exe = executable('c10p4', sources2,
   install : true)
+exe = executable('c10p5', sources3,
+  install : true)
+exe = executable('c10p8', sources4,
+  install : true)
+
+
 
 
 
