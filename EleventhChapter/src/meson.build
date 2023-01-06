@@ -1,2 +1,5 @@
 sources = files('c11p1.cpp')
 sources1 = files('c11p2.cpp')
+sources2 = files('c11p3.cpp')
+sources3 = files('c11p4.cpp')
+sources4 = files('c11p5.cpp')
