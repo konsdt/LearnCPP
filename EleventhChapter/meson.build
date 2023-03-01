@@ -14,7 +14,8 @@ exe = executable('c11p4', sources3,
   install : true)
 exe = executable('c11p5', sources4,
   install : true)
-
+exe = executable('c11p7', sources5,
+  install : true)
 
 
 
