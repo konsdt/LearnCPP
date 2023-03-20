@@ -49,7 +49,7 @@ conditionalize your delete statements.
 dynamically allocated arrays allows us to choose an array lenght at runtime
 
 The syntax to initialize a dynamic array to zeros is quite simple:
-int* array { new[] int[length]{}};
+int* array { new[] int[length] {} };
 
 since c++11 initializer list now also work for dynamically allocated arrays
 
