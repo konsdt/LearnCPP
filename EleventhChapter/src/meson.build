@@ -12,4 +12,7 @@ sources9q = files('c11p11q.cpp')
 sources10 = files('c11p13.cpp')
 sources11 = files('c11p14.cpp')
 sources12 = files('c11p16.cpp')
+sources13 = files('c11p17.cpp')
+sources14 = files('c11p18.cpp')
+sources15 = files('c11p19.cpp')
 
