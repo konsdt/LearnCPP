@@ -38,6 +38,9 @@ exe = executable('c11p18', sources14,
   install : true)
 exe = executable('c11p19', sources15,
   install : true)
-
+exe = executable('c11px', sources16,
+  install : true)
+exe = executable('c11pxq6', sources17,
+  install : true)
 
 test('basic', exe)
