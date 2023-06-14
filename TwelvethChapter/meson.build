@@ -5,7 +5,12 @@ project('TwelvethChapter', 'cpp',
 subdir('src/')
 exe = executable('c12p1', sources,
   install : true)
-exe = executable('c12q1', sources,
+exe = executable('c12q1', sources1,
   install : true)
-
+exe = executable('c12p2', sources2,
+  install : true)
+exe = executable('c12p3', sources3,
+  install : true)
+exe = executable('c12p4', sources4,
+  install : true)
 test('basic', exe)

@@ -37,6 +37,6 @@ int goo() {
 
 int main() {
     int (*fncPtr)(){ &foo }; //fcnPtr points to function foo
-    fcnPtr = &goo; // fcnPtr now points to function goo     
+    fncPtr = &goo; // fcnPtr now points to function goo     
     return 0;
 }
