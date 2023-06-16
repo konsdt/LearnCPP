@@ -13,4 +13,8 @@ exe = executable('c12p3', sources3,
   install : true)
 exe = executable('c12p4', sources4,
   install : true)
+exe = executable('c12p5', sources5,
+  install : true)
+exe = executable('c12p6', sources6,
+  install : true)
 test('basic', exe)
