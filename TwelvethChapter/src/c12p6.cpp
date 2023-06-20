@@ -5,6 +5,15 @@
 12.6 Ellipsis (and why to avoid them)
 ellipsis (aka "...") allows to pass a variable number of arguments to a function
 
+We should not use ellipsis at all if possible to avoid!
+it omits type checking which is generally never a good idea
+There are different options for a flexible amount of paramaters that need to be
+passed to a function (e.g. dynamically sized array)
+
+if you have to use it, make sure, that all parameters passed via the ellipsis have
+the same type. Mixing them might cause the caller to mix up themselves, count 
+parameters or decoder string are generally safer than using a sentinel value
+
 */
 
 
