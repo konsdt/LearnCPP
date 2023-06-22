@@ -23,4 +23,6 @@ exe = executable('c12p8', sources8,
   install : true)
 exe = executable('c12q8', sourcesq8,
   install : true)
+exe = executable('c12px', sourcesx,
+  install : true)
 test('basic', exe)
