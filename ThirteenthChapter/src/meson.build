@@ -8,6 +8,10 @@ sources6 = files('c13p9.cpp')
 sources7 = files('c13p10.cpp')
 sources8 = files('c13p11.cpp')
 sources9 = files('c13p13.cpp')
+sources10 = files('c14p11.cpp')
+sources11 = files('c14p12.cpp')
+
+
 
 
 
