@@ -6,5 +6,7 @@ subdir('src')
 
 exe = executable('c15p1', sources,
   install : true)
+exe = executable('c15p2', sources1,
+  install : true)
 
 test('basic', exe)

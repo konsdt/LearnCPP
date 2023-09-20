@@ -32,7 +32,7 @@ public:
      void setID(int id) { m_id = id; }
 
      void print() { std::cout << this->m_id; } //use this ptr to access the implicit
-     object and operator-> to select member m_id
+     //object and operator-> to select member m_id
 };
 
 
