@@ -37,12 +37,32 @@ struct Foo
     std::vector<int> v{ std::vector<int>(8) }; // ok
 };
 
-const vectory must be initialized and can not be modified
+const vectorymust be initialized and can not be modified
 it is not possible to make std::vector a constexpr, if that is needed we have
 to use the std::array class
 
 The name vector is actually chosen wrongly and should have been called array
 but it is too late to change that now.
+
+16.3 std::vector and the unsigned length and subscript problem
+
+Sign conversions (from an unsigned type to a signed type or vice versa) are 
+narrowing conversion, since either type can not store all values from the opposing
+type.
+list initializations do not allow narrowing conversions, copy initialization on
+the other hand allows narrowing conversions
+if a value is constexpr and can be stored by the opposing type the conversion
+is not considered to be narrowing
+
+"size_type" is a nested typedef defined in standard library container classes,
+used as the type for the length (and indices, if supported) of the container 
+class.
+
+size_type defaults to std::size_t, and since this is almost never changed, we 
+can reasonably assume size_type is an alias for std::size_t.
+
+We can ask a container class object for its length using the "size()" member 
+functions
 */
 
 int main() 
@@ -77,5 +97,20 @@ int main()
 
     std::cout << "The sum is: " << integral_vals[0] + integral_vals[1] + integral_vals[2] << '\n';
     std::cout << "The product is: " << integral_vals[0] * integral_vals[1] * integral_vals[2] << '\n';
+
+    // length of a container
+    std::cout << "length: " << primes.size() << '\n'; // returns length as type 'size_type' 
+    // alias for 'std::size_t')
+    // std::size() can also be used on C-style arrays and is sometimes favored
+    // when writing function templates that can also accept C-style arrays
+    // std:ssize() will return the size as a large signed type
+    // member function .at() does bound checking during the indexing 
+    // typically we still use operator[] since bound checking is better done 
+    // before
+
+    std::vector<char> hello {'h', 'e', 'l', 'l', 'o'};
+    std::cout << "The array has " << std::size(hello) << " elements.\n";
+    std::cout << hello[1] << hello.at(1);
+
     return 0;
 }
