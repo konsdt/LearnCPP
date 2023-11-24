@@ -9,5 +9,7 @@ exe = executable('c16p4', sources1,
   install : true)
 exe = executable('c16p5', sources2,
   install : true)
+exe = executable('c16p6', sources3,
+  install : true)
 
 test('basic', exe)

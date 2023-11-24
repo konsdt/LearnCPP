@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <cassert>
+#include <string_view>
 /*
 16.5 Arrays and loops
 loops provide a way to traverse an array without having to explicitly list each element
@@ -93,6 +95,38 @@ T findMax(const std::vector<T>& arr)
     }
     return max;
 }
+
+void FizzBuzz(int iterations) 
+{
+    const std::vector<int> divisors { 3, 5, 7, 11, 13, 17, 19 };
+    std::size_t length {divisors.size()};
+    const std::vector<std::string_view> words {"fizz", "buzz", "pop", "bang", "jazz", "pow", "boom" };
+
+    assert(std::size(divisors) == std::size(words) && "fizzbuss: array sizes dont match");
+    
+    for (int i {1}; i < iterations; ++i)
+    {
+        bool dividable {false};
+        for (std::size_t j {0}; j < length; ++j)
+        {
+            if (i % divisors[j] == 0)
+            {
+                std::cout << words[j];
+                dividable = true;
+            }
+        }
+        if  (!dividable)
+        {
+            std::cout << i;
+        }
+        std::cout << '\n';
+    }    
+        
+}
+    
+
+
+
 int main() 
 {
     std::vector testScore { 84, 92, 76, 81, 56 };
@@ -118,5 +152,7 @@ int main()
 
     std::cout << "The max score is: " << findMax(testScore) << '\n'; // prints 92
 
+
+    FizzBuzz(21);
     return 0;
 }
