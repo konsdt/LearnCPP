@@ -21,4 +21,6 @@ exe = executable('c16p10', sources7,
   install : true)
 exe = executable('c16p11', sources8,
   install : true)
+exe = executable('cppMan', sources9,
+  install : true)
 test('basic', exe)

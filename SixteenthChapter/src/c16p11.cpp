@@ -71,23 +71,55 @@ int countTotalItems(const std::vector<int>& inventory)
 }
 
 template <typename T>
-std::pair<T,T> minMax(std::vector<T>& v)
+std::pair<std::size_t, std::size_t> minMax(const std::vector<T>& v)
 {
     std::pair<T,T> min_max {v[0], v[0]};
-    for (T value : v)
+    std::pair<std::size_t, std::size_t> min_max_index {0, 0};
+    for (std::size_t i {0}; i < std::size(v); ++i)
     {
-        if (value < min_max.first)
-            min_max.first = value;
-        if (value > min_max.second)
-            min_max.second = value;
+        if (v[i] < min_max.first)
+        {
+            min_max.first = v[i];
+            min_max_index.first = i;
+        }
+        if (v[i] > min_max.second)
+        {
+            min_max.second = v[i];
+            min_max_index.second = i;
+        }
     }
-    return min_max;
+    return min_max_index;
+}
+
+std::vector<int> getVector()
+{
+    std::vector<int> v { };
+    while (true)
+    {
+        int input{};
+        std::cout << "Enter numbers to add (use -1 to stop): ";
+        std::cin >> input;
+        if (input == -1)
+            break;
+
+        if (!std::cin) // if the previous extraction failed
+        {
+            std::cin.clear(); // put us back in 'normal' operation mode
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // and remove the bad input
+            continue;
+        }
+
+        v.emplace_back(input);
+    }
+
+    return v;
 }
 
 template <typename T>
-void printMinMax(std::pair<T,T>& pair)
+void printMinMax(const std::pair<T,T>& pair)
 {
-    std::cout << T
+    std::cout << "The min element has index " << pair.first << '\n';
+    std::cout << "The max element has index " << pair.second << '\n';
 }
 int main()
 {
@@ -111,7 +143,9 @@ int main()
 
     std::vector v1 { 3, 8, 2, 5, 7, 8, 3 };
     std::vector v2 { 5.5, 2.7, 3.3, 7.6, 1.2, 8.8, 6.6 };
-    minMax(v1);
+    printMinMax(minMax(v1));
+    printMinMax(minMax(v2));
+    printMinMax(minMax(getVector()));
 
 
     std::vector<bool> v { true, false, false, true, true };
